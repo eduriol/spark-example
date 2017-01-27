@@ -6,6 +6,6 @@ import static spark.Spark.port;
 public class HelloWorldResource {
 	public static void main(String[] args) {
 		port(8088);
-		get("/helloworld", (req, res) -> "Hello World");
+		get("/helloworld", (req, res) -> "Hello " + req.queryParams("name"));
 	}	
 }
